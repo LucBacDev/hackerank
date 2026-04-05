@@ -1,0 +1,36 @@
+<?php
+
+/*
+ * Complete the 'timeConversion' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts STRING s as parameter.
+ */
+
+function timeConversion($s)
+{
+    $hour = substr($s, 0, 2);
+    $rest = substr($s, 2, 6);
+    $period = substr($s, -2);
+
+    if ($period == "AM") {
+        if ($hour == "12")
+            $hour = "00";
+    } else {
+     if ($hour != "12")
+         $hour = $hour + 12;
+    }
+
+    return $hour . $rest;
+
+}
+
+$fptr = fopen(getenv("OUTPUT_PATH"), "w");
+
+$s = rtrim(fgets(STDIN), "\r\n");
+
+$result = timeConversion($s);
+
+fwrite($fptr, $result . "\n");
+
+fclose($fptr);
