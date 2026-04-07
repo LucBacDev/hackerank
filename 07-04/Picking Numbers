@@ -1,0 +1,41 @@
+<?php
+
+/*
+ * Complete the 'pickingNumbers' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER_ARRAY a as parameter.
+ */
+
+function pickingNumbers($a) {
+    $counts = [];
+    foreach ($a as $num) {
+        if (!isset($counts[$num])) {
+            $counts[$num] = 0;
+        }
+        $counts[$num]++;
+    }
+
+    $maxLength = 0;
+    foreach ($counts as $num => $value) {
+        $nextCount = isset($counts[$num + 1]) ? $counts[$num + 1] : 0;
+        $maxLength = max($maxLength, $value + $nextCount);
+    }
+
+    return $maxLength;
+
+}
+
+$fptr = fopen(getenv("OUTPUT_PATH"), "w");
+
+$n = intval(trim(fgets(STDIN)));
+
+$a_temp = rtrim(fgets(STDIN));
+
+$a = array_map('intval', preg_split('/ /', $a_temp, -1, PREG_SPLIT_NO_EMPTY));
+
+$result = pickingNumbers($a);
+
+fwrite($fptr, $result . "\n");
+
+fclose($fptr);
