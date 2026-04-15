@@ -23,6 +23,9 @@ function lcm($x, $y) {
 }
 
 function getTotalX($a, $b) {
+    if (!is_array($a) || !is_array($b) || empty($a) || empty($b)) {
+        return 0;
+    }
     $lcm = $a[0];
     for ($i = 1; $i < count($a); $i++) {
         $lcm = lcm($lcm, $a[$i]);

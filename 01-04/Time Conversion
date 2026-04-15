@@ -9,6 +9,12 @@
 
 function timeConversion($s)
 {
+    if (!is_string($s) || strlen($s) === 0) {
+        return '';
+    }
+    if (!preg_match('/^\d{2}:\d{2}:\d{2}(AM|PM)$/', $s)) {
+        return '';
+    }
     $hour = substr($s, 0, 2);
     $rest = substr($s, 2, 6);
     $period = substr($s, -2);

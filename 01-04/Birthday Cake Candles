@@ -8,6 +8,9 @@
  */
 
 function birthdayCakeCandles($candles) {
+    if (!is_array($candles) || empty($candles)) {
+        return 0;
+    }
     $max = max($candles);
     $count = 0;
 

@@ -10,6 +10,9 @@
  */
 
 function pageCount($n, $p) {
+    if ($n < 1 || $p < 1 || $p > $n) {
+        return 0;
+    }
     $fromFront = intdiv($p, 2);
     $fromBack = intdiv($n, 2) - intdiv($p, 2);
 

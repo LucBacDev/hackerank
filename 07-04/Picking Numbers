@@ -8,6 +8,9 @@
  */
 
 function pickingNumbers($a) {
+    if (!is_array($a) || empty($a)) {
+        return 0;
+    }
     $counts = [];
     foreach ($a as $num) {
         if (!isset($counts[$num])) {

@@ -8,8 +8,14 @@
  */
 
 function migratoryBirds($arr) {
+    if (!is_array($arr) || empty($arr)) {
+        return 0;
+    }
     $count = [0, 0, 0, 0, 0, 0];
     foreach ($arr as $bird) {
+        if ($bird < 1 || $bird > 5) {
+            continue;
+        }
         $count[$bird]++;
     }
 

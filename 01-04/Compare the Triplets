@@ -10,6 +10,12 @@
  */
 
 function compareTriplets($a, $b) {
+    if (!is_array($a) || !is_array($b) || empty($a) || empty($b)) {
+        return [0, 0];
+    }
+    if (count($a) !== count($b)) {
+        return [0, 0];
+    }
     $dem1 = 0;
     $dem2 = 0;
    

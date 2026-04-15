@@ -10,6 +10,9 @@
  */
 
 function sockMerchant($n, $ar) {
+    if (!is_array($ar) || empty($ar) || $n < 1) {
+        return 0;
+    }
   $count = [];
 
     for ($i = 0; $i < $n; $i++) {

@@ -8,6 +8,9 @@
  */
 
 function plusMinus($arr) {
+    if (!is_array($arr) || empty($arr)) {
+        return;
+    }
        $n = count($arr);
     
     $positive = 0;

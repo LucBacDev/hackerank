@@ -10,6 +10,15 @@
  */
 
 function designerPdfViewer($h, $word) {
+    if (!is_array($h) || count($h) !== 26) {
+        return 0;
+    }
+    if (!is_string($word) || strlen($word) === 0) {
+        return 0;
+    }
+    if (!preg_match('/^[a-z]+$/', $word)) {
+        return 0;
+    }
  $maxHeight = 0;
 
     $len = strlen($word);
