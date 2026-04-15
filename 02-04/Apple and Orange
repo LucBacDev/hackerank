@@ -13,6 +13,12 @@
  */
 
 function countApplesAndOranges($s, $t, $a, $b, $apples, $oranges) {
+    if (!is_array($apples) || !is_array($oranges)) {
+        return;
+    }
+    if ($s > $t) {
+        return;
+    }
     $countApple = 0;
     $countOrange = 0;
 

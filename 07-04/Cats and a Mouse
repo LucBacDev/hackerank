@@ -2,6 +2,9 @@
 
 // Complete the catAndMouse function below.
 function catAndMouse($x, $y, $z) {
+    if ($x < 0 || $y < 0 || $z < 0) {
+        return "Mouse C";
+    }
     $catA = abs($x - $z); 
     $catB = abs($y - $z); 
 

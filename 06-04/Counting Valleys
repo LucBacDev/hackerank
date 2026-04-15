@@ -10,6 +10,12 @@
  */
 
 function countingValleys($steps, $path) {
+    if ($steps < 0 || !is_string($path) || strlen($path) === 0) {
+        return 0;
+    }
+    if (strlen($path) !== $steps) {
+        return 0;
+    }
     $level = 0;
     $valleys = 0;
 

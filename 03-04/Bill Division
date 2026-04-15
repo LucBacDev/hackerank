@@ -10,6 +10,15 @@
  */
 
 function bonAppetit($bill, $k, $b) {
+    if (!is_array($bill) || empty($bill)) {
+        return;
+    }
+    if ($k < 0 || $k >= count($bill)) {
+        return;
+    }
+    if ($b < 0) {
+        return;
+    }
      $sum = 0;
 
     for ($i = 0; $i < count($bill); $i++) {

@@ -8,6 +8,9 @@
  */
 
 function dayOfProgrammer($year) {
+    if (!is_numeric($year) || $year < 1700 || $year > 2700) {
+        return '';
+    }
     if ($year == 1918) {
         return "26.09.1918";
     }

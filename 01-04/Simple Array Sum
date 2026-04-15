@@ -8,6 +8,9 @@
  */
 
 function simpleArraySum($ar) {
+    if (!is_array($ar) || empty($ar)) {
+        return 0;
+    }
     $kq = array_sum($ar);
     return $kq;
 }

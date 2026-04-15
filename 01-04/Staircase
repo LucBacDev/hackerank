@@ -7,6 +7,9 @@
  */
 
 function staircase($n) {
+    if (!is_numeric($n) || $n < 1 || $n > 100) {
+        return;
+    }
     for ($i = 1; $i <= $n; $i++) {
         for ($j = 1; $j <= $n - $i; $j++) echo " ";
         for ($j = 1; $j <= $i; $j++) echo "#";

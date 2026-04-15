@@ -8,6 +8,9 @@
  */
 
 function breakingRecords($scores) {
+    if (!is_array($scores) || empty($scores)) {
+        return [0, 0];
+    }
  $min = $scores[0];
     $max = $scores[0];
     $minCount = 0;

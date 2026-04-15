@@ -7,6 +7,9 @@
  */
 
 function miniMaxSum($arr) {
+    if (!is_array($arr) || count($arr) < 5) {
+        return;
+    }
     $sum = array_sum($arr); 
     $min = min($arr);
     $max = max($arr);

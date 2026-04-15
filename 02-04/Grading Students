@@ -8,8 +8,15 @@
  */
 
 function gradingStudents($grades) {
+    if (!is_array($grades) || empty($grades)) {
+        return [];
+    }
     $a = [];
     for($i = 0; $i< count($grades); $i++){
+        if ($grades[$i] < 0 || $grades[$i] > 100) {
+            $a[$i] = $grades[$i];
+            continue;
+        }
         $abc =  5- ($grades[$i] %5);
         if($grades[$i] <38){
             $a[$i] = $grades[$i];

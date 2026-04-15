@@ -8,6 +8,14 @@
  */
 
 function formingMagicSquare($s) {
+    if (!is_array($s) || count($s) !== 3) {
+        return 0;
+    }
+    foreach ($s as $row) {
+        if (!is_array($row) || count($row) !== 3) {
+            return 0;
+        }
+    }
 $magicSquares = [
         [
             [8,1,6],

@@ -1,6 +1,9 @@
 <?php
 
 function solveMeFirst($a,$b){
+  if (!is_numeric($a) || !is_numeric($b)) {
+    return 0;
+  }
   return $a+$b;
   
 }
